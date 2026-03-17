@@ -3,6 +3,8 @@
 # . Qualquer caractere (com exceção da quebra de linha)
 # [] conjunto de caracteres
 
+# # Saida
+
 import re
 
 texto = '''
@@ -20,12 +22,24 @@ On3bs On4bs On56s
 '''
 
 print('Meta caractere ou "|" = ', re.findall(r'João|Maria|todos', texto))
+# Meta caractere ou "|" =  ['João', 'Maria', 'todos', 'Maria']
+
 print('Meta caractere qualquer "." = ', re.findall(r'On.bs', texto))
+# Meta caractere qualquer "." =  ['On3bs', 'On4bs']
+
 print('Meta caractere qualquer "." = ', re.findall(r'On..s', texto))
+# Meta caractere qualquer "." =  ['On3bs', 'On4bs', 'On56s']
+
 print('Meta conjunto "[]" = ', re.findall(r'[Jj]oão|[Mm]aria', texto))
+# Meta conjunto "[]" =  ['João', 'Maria', 'joão', 'maria', 'Maria']
+
 print('Meta conjunto "[]" com range "-" = ', re.findall(r'[a-z]aria', texto))
+# Meta conjunto "[]" com range "-" =  ['maria']
+
 print('Meta conjunto "[]" com range "-" = ',
       re.findall(r'[a-zA-Z]aria', texto))
+# Meta conjunto "[]" com range "-" =  ['Maria', 'maria', 'Maria']
 
 print('flag.IGNORECASE = ',
       re.findall(r'jOãO|MArIa', texto, flags=re.I))
+# flag.IGNORECASE =  ['João', 'Maria', 'joão', 'maria', 'Maria']
