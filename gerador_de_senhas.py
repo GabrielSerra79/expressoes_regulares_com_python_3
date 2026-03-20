@@ -97,6 +97,28 @@ if __name__ == '__main__':
         ))
     print()
 
+    print('MAIUSCULAS E MINUSCULAS')
+    for i in range(5):
+        print(create_pass(
+            length=12,
+            chars=False,
+            upper=True,
+            lower=True,
+            numbers=False
+        ))
+    print()
+
+    print('MAIUSCULAS, MINUSCULAS e NUMEROS')
+    for i in range(5):
+        print(create_pass(
+            length=12,
+            chars=False,
+            upper=True,
+            lower=True,
+            numbers=True,
+        ))
+    print()
+
     print('QUANTIDADE INVÁLIDA (6)')
     for i in range(5):
         print(create_pass(
